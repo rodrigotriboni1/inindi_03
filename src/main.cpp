@@ -1,5 +1,5 @@
 #include <Arduino.h>
-
+int result=0;
 // put function declarations here:
 int myFunction(int, int);
 
@@ -9,6 +9,7 @@ void setup() {
 }
 
 void loop() {
+  result++;
   // put your main code here, to run repeatedly:
 }
 
