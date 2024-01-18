@@ -1,32 +1,55 @@
 #include <Arduino.h>
-#define ledPin 3                   // the number of the LED pin
-#define analogPin A5 
+#include "inindThread.h"
+#define ledPin 3 // the number of the LED pin
+#define analogPin A5
+#define LED_INTERVAL 500  // interval at which to blink (milliseconds)
+#define ANALOG_INTERVAL 1 // analog read interval (milliseconds)
 
-unsigned long previousMillis = 0;  // will store last time LED was updated
-const long interval = 500;         // interval at which to blink (milliseconds)
+unsigned long previousMillisLED = 0;    // will store last time LED was updated
+unsigned long previousMillisAnalog = 0; // will store last time LED was updated
+unsigned long count = 0;
 
-void ledFunc()                     // Faz a leitura do sinal Analogico
-{ 
-  digitalWrite(ledPin,!digitalRead(ledPin));
+void ledFunc() // Faz a leitura do sinal Analogico
+{
+  digitalWrite(ledPin, !digitalRead(ledPin));
 }
 
-void analogReadFunc()              // Faz a leitura do sinal Analogico
-{ 
-  unsigned int amplitude = (unsigned int)(1000.0*((float)analogRead(analogPin))/1023.0);
-  Serial.println(amplitude);
+void analogReadFunc() // Faz a leitura do sinal Analogico
+{
+  count += ANALOG_INTERVAL;
+  Serial.print(">amp:");
+  Serial.print(count);  
+  Serial.print(":");  
+  Serial.print(analogRead(analogPin));
+  Serial.println("|xy");
 }
 
-void setup() {
+void setup()
+{
   pinMode(ledPin, OUTPUT);
   pinMode(analogPin, INPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
+  threadSetup(ledFunc, LED_INTERVAL, analogReadFunc, ANALOG_INTERVAL, NULL);
 }
 
-void loop() {
+/* void loop()
+{
   unsigned long currentMillis = millis();
-  analogReadFunc();
-  if (currentMillis - previousMillis >= interval) {
-    previousMillis = currentMillis;
+  if (currentMillis - previousMillisAnalog >= ANALOG_INTERVAL)
+  {
+    previousMillisAnalog = currentMillis;
+    analogReadFunc();
+  }
+  if (currentMillis - previousMillisLED >= LED_INTERVAL)
+  {
+    previousMillisLED = currentMillis;
     ledFunc();
   }
+} */
+
+void loop()
+{
+  /*   analogReadFunc();
+    ledFunc();
+    delay(LED_INTERVAL); */
 }

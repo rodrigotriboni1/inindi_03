@@ -8,7 +8,7 @@
 
 <item itemtype="Resistor" CircId="Resistor-66" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-128,-204" rotation="0" hflip="1" vflip="1" label="Resistor-66" idLabPos="-12,-20" labelrot="0" valLabPos="-12,-19" valLabRot="0" Resistance="100 Ω" />
 
-<item itemtype="Potentiometer" CircId="Potentiometer-83" mainComp="false" ShowProp="Value_Ohm" Show_id="false" Show_Val="true" Pos="116,-228" rotation="90" hflip="1" vflip="-1" label="Potentiometer-83" idLabPos="-16,-40" labelrot="0" valLabPos="-12,-13" valLabRot="-270" Resistance="1 kΩ" Value_Ohm="0 Ω" />
+<item itemtype="Potentiometer" CircId="Potentiometer-83" mainComp="false" ShowProp="Value_Ohm" Show_id="false" Show_Val="true" Pos="116,-228" rotation="90" hflip="1" vflip="-1" label="Potentiometer-83" idLabPos="-16,-40" labelrot="0" valLabPos="-12,-13" valLabRot="-270" Resistance="1 kΩ" Value_Ohm="66 Ω" />
 
 <item itemtype="SerialPort" CircId="SerialPort-90" mainComp="false" Show_id="false" Show_Val="false" Pos="-52,-280" rotation="0" hflip="1" vflip="1" label="SerialPort-90" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Port="COM4" Baudrate="115200 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" />
 
