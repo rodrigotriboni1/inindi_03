@@ -8,9 +8,13 @@
 
 <item itemtype="Resistor" CircId="Resistor-66" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-128,-204" rotation="0" hflip="1" vflip="1" label="Resistor-66" idLabPos="-12,-20" labelrot="0" valLabPos="-12,-19" valLabRot="0" Resistance="100 Ω" />
 
-<item itemtype="Potentiometer" CircId="Potentiometer-83" mainComp="false" ShowProp="Value_Ohm" Show_id="false" Show_Val="true" Pos="116,-228" rotation="90" hflip="1" vflip="-1" label="Potentiometer-83" idLabPos="-16,-40" labelrot="0" valLabPos="-12,-13" valLabRot="-270" Resistance="1 kΩ" Value_Ohm="66 Ω" />
-
 <item itemtype="SerialPort" CircId="SerialPort-90" mainComp="false" Show_id="false" Show_Val="false" Pos="-52,-280" rotation="0" hflip="1" vflip="1" label="SerialPort-90" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Port="COM4" Baudrate="115200 _Bauds" DataBits="8 _Bits" StopBits="1 _Bits" />
+
+<item itemtype="WaveGen" CircId="WaveGen-93" mainComp="false" Show_id="false" Show_Val="false" Pos="112,-228" rotation="0" hflip="-1" vflip="1" label="WaveGen-93" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Running="true" Wave_Type="Sine" Freq="10 Hz" Steps="100 _Steps" Duty="50 _%" Always_On="true" Semi_Ampli="1 V" Mid_Volt="2.5 V" />
+
+<item itemtype="Oscope" CircId="Oscope-95" mainComp="false" Show_id="false" Show_Val="false" Pos="184,-132" rotation="0" hflip="1" vflip="1" label="Oscope-95" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _Pixels" Basic_Y="135 _Pixels" BufferSize="600000 Samples" TimDiv="20000000000" TimPos="16872427972,21106172818,21106172818,0," VolDiv="0.2,1,1,1," Tunnels=",,,," Trigger="0" Filter="0.1 V" Trigger="0" AutoSC="3" Tracks="1" HideCh="false,false,false,false," VolPos="-2.5,0,0,0," />
+
+<item itemtype="Node" CircId="Node-97" mainComp="false" Pos="76,-228" />
 
 <item itemtype="Connector" uid="connector-84" startpinid="Resistor-66-rPin" endpinid="Uno-1-3" pointList="-112,-204,-92,-204" />
 
@@ -18,14 +22,16 @@
 
 <item itemtype="Connector" uid="connector-86" startpinid="Led-80-rPin" endpinid="Uno-1-GND2" pointList="-156,-160,-156,-108,-92,-108" />
 
-<item itemtype="Connector" uid="connector-87" startpinid="Potentiometer-83-PinM" endpinid="Uno-1-A5" pointList="100,-228,52,-228" />
-
-<item itemtype="Connector" uid="connector-88" startpinid="Potentiometer-83-PinA" endpinid="Uno-1-GND1" pointList="116,-212,116,-156,52,-156" />
-
-<item itemtype="Connector" uid="connector-89" startpinid="Potentiometer-83-PinB" endpinid="Uno-1-5V0" pointList="116,-244,116,-272,168,-272,168,-148,52,-148" />
-
 <item itemtype="Connector" uid="Connector-91" startpinid="SerialPort-90-pin0" endpinid="Uno-1-0" pointList="-92,-288,-116,-288,-116,-228,-92,-228" />
 
 <item itemtype="Connector" uid="Connector-92" startpinid="SerialPort-90-pin1" endpinid="Uno-1-1" pointList="-92,-272,-68,-272,-68,-220,-92,-220" />
+
+<item itemtype="Connector" uid="Connector-94" startpinid="Uno-1-A5" endpinid="Node-97-0" pointList="52,-228,76,-228" />
+
+<item itemtype="Connector" uid="Connector-96" startpinid="Oscope-95-Pin0" endpinid="Node-97-1" pointList="96,-180,76,-180,76,-228" />
+
+<item itemtype="Connector" uid="Connector-98" startpinid="Node-97-2" endpinid="WaveGen-93-outnod" pointList="76,-228,96,-228" />
+
+<item itemtype="Connector" uid="Connector-99" startpinid="Oscope-95-PinG" endpinid="Uno-1-GND1" pointList="96,-68,72,-68,72,-156,52,-156" />
 
 </circuit>

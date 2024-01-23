@@ -21,7 +21,7 @@ void analogReadFunc() // Faz a leitura do sinal Analogico
   Serial.print(count);  
   Serial.print(":");  
   Serial.print(analogRead(analogPin));
-  Serial.println("|xy");
+  Serial.println("§Volts|g");
 }
 
 void setup()
@@ -29,7 +29,7 @@ void setup()
   pinMode(ledPin, OUTPUT);
   pinMode(analogPin, INPUT);
   Serial.begin(115200);
-  threadSetup(ledFunc, LED_INTERVAL, analogReadFunc, ANALOG_INTERVAL, NULL);
+  //threadSetup(ledFunc, LED_INTERVAL, analogReadFunc, ANALOG_INTERVAL, NULL);
 }
 
 /* void loop()
@@ -49,7 +49,9 @@ void setup()
 
 void loop()
 {
-  /*   analogReadFunc();
+    count++;
+    analogReadFunc();
     ledFunc();
-    delay(LED_INTERVAL); */
+    delay(LED_INTERVAL);
+    if(count % 100 == 0) delay(LED_INTERVAL);
 }
