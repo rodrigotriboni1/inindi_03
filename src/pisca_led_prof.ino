@@ -29,10 +29,10 @@ void setup()
   pinMode(ledPin, OUTPUT);
   pinMode(analogPin, INPUT);
   Serial.begin(115200);
-  //threadSetup(ledFunc, LED_INTERVAL, analogReadFunc, ANALOG_INTERVAL, NULL);
+  // threadSetup(ledFunc, LED_INTERVAL, analogReadFunc, ANALOG_INTERVAL, NULL);
 }
 
-/* void loop()
+void loop()
 {
   unsigned long currentMillis = millis();
   if (currentMillis - previousMillisAnalog >= ANALOG_INTERVAL)
@@ -45,13 +45,13 @@ void setup()
     previousMillisLED = currentMillis;
     ledFunc();
   }
-} */
+}
 
-void loop()
+/* void loop()
 {
     count++;
     analogReadFunc();
     ledFunc();
     delay(LED_INTERVAL);
     if(count % 100 == 0) delay(LED_INTERVAL);
-}
+} */
