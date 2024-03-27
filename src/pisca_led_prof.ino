@@ -4,7 +4,7 @@
 
 unsigned long count = 0;
 
-#define LEDPIN 3 // the number of the LED pin
+#define LEDPIN 13 // the number of the LED pin
 #define LED_INTERVAL 500  // interval at which to blink (milliseconds)
 void ledFunc() // Faz a leitura do sinal Analogico
 {
